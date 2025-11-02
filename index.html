@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Panduan Akademik PIAUD UIN Ar-Raniry</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #5cdfce 0%, #ffcab0 100%);
+            min-height: 100%;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(91, 15, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5b0f00 0%, #8b1538 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            margin: 0 0 5px 0;
+            opacity: 0.9;
+        }
+
+        .university-name {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .faq-content {
+            padding: 40px 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 2px solid #ffcab0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 202, 176, 0.3);
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, #ffcab0 0%, #ffb399 100%);
+            color: #5b0f00;
+            padding: 20px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #ffb399 0%, #ffcab0 100%);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: #5b0f00;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #fefefe;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 25px;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .faq-answer-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .faq-answer-content li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffcab0 0%, #ffcab0 100%);
+            background-size: 100% 0.2em;
+            background-repeat: no-repeat;
+            background-position: 0 88%;
+            padding: 2px 4px;
+            font-weight: 600;
+            color: #5b0f00;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 3px solid #ffcab0;
+        }
+
+        .footer-icon {
+            font-size: 2rem;
+            color: #5b0f00;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .faq-content {
+                padding: 20px 15px;
+            }
+
+            .faq-question {
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+
+            .faq-answer-content {
+                padding: 20px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <header class="header">
+    <div class="header-content">
+     <h1 class="main-title" id="main-title">FAQ Panduan Akademik</h1>
+     <p class="subtitle" id="subtitle">Program Studi PIAUD</p>
+     <p class="university-name" id="university-name">UIN Ar-Raniry Banda Aceh</p>
+    </div>
+   </header>
+   <main class="faq-content">
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Apa tujuan utama Program Studi PIAUD? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Program Studi PIAUD bertujuan <span class="highlight">menyiapkan pendidik anak usia dini yang berkarakter Islami</span>, profesional, dan mampu mengintegrasikan nilai-nilai keislaman dengan ilmu pendidikan modern.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Berapa lama masa studi di PIAUD? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Masa studi normal adalah <span class="highlight">8 semester (4 tahun)</span>, dan maksimal <span class="highlight">14 semester (7 tahun)</span> sesuai aturan akademik universitas.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Berapa total SKS yang harus ditempuh untuk lulus? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Mahasiswi wajib menuntaskan <span class="highlight">144 SKS</span>, yang mencakup mata kuliah universitas, fakultas, keprodian, PPKPM, dan skripsi.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Apa gelar yang diperoleh setelah lulus dari PIAUD? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Lulusan memperoleh gelar <span class="highlight">Sarjana Pendidikan (S.Pd.)</span>.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Kapan waktu pengisian KRS? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Pengisian <span class="highlight">Kartu Rencana Studi (KRS)</span> dilakukan setiap awal semester melalui SIAKAD sesuai jadwal akademik resmi. Mahasiswi wajib berkonsultasi dengan <span class="highlight">Dosen Pembimbing Akademik (PA)</span> sebelum pengisian.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Bagaimana jika terlambat mengisi KRS? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Mahasiswi yang terlambat mengisi KRS harus <span class="highlight">mengajukan surat izin keterlambatan</span> ke pihak prodi dan fakultas. Tanpa KRS, mahasiswi tidak diakui sebagai peserta kuliah pada semester tersebut.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Apa yang dimaksud dengan KHS? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p><span class="highlight">Kartu Hasil Studi (KHS)</span> adalah laporan nilai mata kuliah setiap semester yang menentukan Indeks Prestasi Semester (IPS) dan Indeks Prestasi Kumulatif (IPK).</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Bagaimana sistem penilaian perkuliahan? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Penilaian mencakup:</p>
+       <ul>
+        <li><span class="highlight">Kehadiran minimal 75%</span></li>
+        <li>Partisipasi dan sikap</li>
+        <li><span class="highlight">UTS (25%)</span></li>
+        <li><span class="highlight">UAS (35%)</span></li>
+        <li>Quiz (10%)</li>
+        <li>TKT (15%)</li>
+        <li>TKM (15%)</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Bagaimana prosedur pengajuan cuti akademik? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Mahasiswi dapat mengajukan cuti akademik <span class="highlight">maksimal 2 semester</span> selama masa studi. Permohonan diajukan secara tertulis melalui prodi dan disetujui oleh dekan sebelum semester berjalan.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Kapan mahasiswi dapat mengambil mata kuliah skripsi? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Setelah memenuhi syarat:</p>
+       <ul>
+        <li>Telah menempuh minimal <span class="highlight">120 SKS</span></li>
+        <li><span class="highlight">IPK minimal 2.75</span></li>
+        <li>Lulus mata kuliah <span class="highlight">Metodologi Penelitian dan Seminar Proposal</span></li>
+        <li>Tidak ada tunggakan administrasi</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Bagaimana proses pengajuan judul skripsi? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Mahasiswi mengajukan usulan judul ke prodi melalui <span class="highlight">dosen pembimbing akademik (PA)</span>, kemudian disetujui oleh Ketua Prodi dan ditetapkan pembimbing utama serta pembimbing pendamping.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Apakah boleh mengganti judul skripsi? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Boleh, dengan <span class="highlight">alasan yang jelas</span> (misalnya data tidak tersedia atau perubahan arah penelitian) dan harus mendapat persetujuan tertulis dari dosen pembimbing dan prodi.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Bagaimana penilaian akhir skripsi? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Nilai skripsi ditentukan berdasarkan:</p>
+       <ul>
+        <li><span class="highlight">Proses bimbingan (20%)</span></li>
+        <li><span class="highlight">Naskah akhir skripsi (40%)</span></li>
+        <li><span class="highlight">Ujian sidang skripsi (40%)</span></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Apa yang terjadi jika tidak lulus sidang skripsi? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Mahasiswi diberi kesempatan <span class="highlight">revisi dan ujian ulang maksimal dua kali</span> sesuai ketentuan prodi.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Apa syarat kelulusan dari Prodi PIAUD? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Mahasiswi dinyatakan lulus apabila:</p>
+       <ul>
+        <li>Menyelesaikan <span class="highlight">144 SKS</span></li>
+        <li><span class="highlight">IPK minimal 2.75</span></li>
+        <li>Lulus ujian skripsi</li>
+        <li>Tidak memiliki nilai E</li>
+        <li>Menyelesaikan administrasi akademik dan keuangan</li>
+        <li>Mengikuti kegiatan universitas wajib (seperti <span class="highlight">PBAK dan praktikum keislaman</span>)</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Kapan pelaksanaan yudisium? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Dilaksanakan <span class="highlight">3 kali dalam setahun</span> oleh fakultas, setelah verifikasi nilai dan berkas kelulusan oleh prodi. Check <span class="highlight">Kalender akademik</span> secara berkala untuk mengetahui tanggal pasti.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Apa dokumen yang dibutuhkan untuk yudisium? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <ul>
+        <li><span class="highlight">Transkrip nilai sementara</span></li>
+        <li>Surat keterangan bebas pustaka</li>
+        <li>Bukti pembayaran</li>
+        <li><span class="highlight">Berkas skripsi final yang sudah disahkan</span></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Apa saja beasiswa yang tersedia untuk mahasiswi PIAUD? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <ul>
+        <li><span class="highlight">KIP Kuliah (Kemendikbudristek)</span></li>
+        <li>Beasiswa Bank Indonesia (BI)</li>
+        <li>Beasiswa BAZNAS</li>
+        <li>Beasiswa Prestasi Akademik (PPA)</li>
+        <li><span class="highlight">Beasiswa Tahfidz</span></li>
+       </ul>
+       <p>Informasi dibagikan melalui prodi dan laman resmi UIN Ar-Raniry.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Siapa Dosen Pembimbing Akademik (PA)? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p><span class="highlight">PA adalah dosen yang ditunjuk</span> untuk membimbing mahasiswi dalam hal akademik, seperti pengisian KRS, pemilihan mata kuliah, dan konsultasi akademik.</p>
+      </div>
+     </div>
+    </div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"> Kapan sebaiknya berkonsultasi dengan PA? <span class="faq-icon">+</span> </button>
+     <div class="faq-answer">
+      <div class="faq-answer-content">
+       <p>Setidaknya <span class="highlight">setiap awal semester</span> (sebelum pengisian KRS) dan setiap kali menghadapi kendala akademik atau perencanaan studi.</p>
+      </div>
+     </div>
+    </div>
+   </main>
+   <footer class="footer">
+    <div class="footer-icon">
+     🎓
+    </div>
+    <p><strong>Program Studi PIAUD UIN Ar-Raniry</strong></p>
+    <p>Membangun Generasi Qur'ani Melalui Pendidikan Anak Usia Dini</p>
+   </footer>
+  </div>
+  <script>
+        const defaultConfig = {
+            main_title: "FAQ Panduan Akademik",
+            subtitle: "Program Studi PIAUD", 
+            university_name: "UIN Ar-Raniry Banda Aceh"
+        };
+
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        async function onConfigChange(config) {
+            const mainTitle = config.main_title || defaultConfig.main_title;
+            const subtitle = config.subtitle || defaultConfig.subtitle;
+            const universityName = config.university_name || defaultConfig.university_name;
+
+            document.getElementById('main-title').textContent = mainTitle;
+            document.getElementById('subtitle').textContent = subtitle;
+            document.getElementById('university-name').textContent = universityName;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["main_title", config.main_title || defaultConfig.main_title],
+                ["subtitle", config.subtitle || defaultConfig.subtitle],
+                ["university_name", config.university_name || defaultConfig.university_name]
+            ]);
+        }
+
+        // Initialize SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9980bc2b01fd9b91',t:'MTc2MjA1NjEzMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
